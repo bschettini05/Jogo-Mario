@@ -2,8 +2,8 @@ const mario = document.querySelector(".mario");
 const pipe = document.querySelector(".pipe");
 const clouds = document.querySelector(".clouds");
 const points = document.querySelector(".points");
-const audioMario = document.getElementById("audioMario");
-const audioSong = document.getElementById("audioSong");
+const audioMario = document.querySelector(".audioMario");
+const audioSong = document.querySelector(".audioSong");
 const audioDied = document.querySelector(".audioDied");
 const audioJump = document.querySelector(".audioJump");
 audioJump.volume = 0.3;
@@ -11,11 +11,8 @@ audioSong.volume = 0.7;
 const restart = document.querySelector(".restartButtonDiv");
 let numberOfPoints = 0;
 let pointAdded = false;
+let firstExecution = false;
 
-window.onload = function() {
-    audioMario.play();
-    audioSong.play();
-}
 
 const jump = () => {
     audioJump.play();
@@ -36,6 +33,12 @@ const loop = setInterval(() => {
     console.log("pipePositionLeft: ", pipePositionLeft);
     console.log("cloudsPositionLeft: ", cloudsPositionLeft);
     console.log("marioPositionBottom: ", marioPositionBottom);
+
+    if(firstExecution === false){
+        audioMario.play();
+        audioSong.play();
+        firstExecution = true;
+    }
 
 
     // game over condition
