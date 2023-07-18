@@ -7,12 +7,15 @@ const audioSong = document.querySelector(".audioSong");
 const audioDied = document.querySelector(".audioDied");
 const audioJump = document.querySelector(".audioJump");
 audioJump.volume = 0.3;
-audioMario.autoPlay = true;
-audioSong.autoPlay = true;
 audioSong.volume = 0.7;
 const restart = document.querySelector(".restartButtonDiv");
 let numberOfPoints = 0;
 let pointAdded = false;
+
+window.onload = function() {
+    audioMario.play();
+    audioSong.play();
+}
 
 const jump = () => {
     audioJump.play();
