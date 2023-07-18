@@ -2,6 +2,7 @@ const mario = document.querySelector(".mario");
 const pipe = document.querySelector(".pipe");
 const clouds = document.querySelector(".clouds");
 const points = document.querySelector(".points");
+const audioButton = document.querySelector(".soundButton");
 const audioMario = document.querySelector(".audioMario");
 const audioSong = document.querySelector(".audioSong");
 const audioDied = document.querySelector(".audioDied");
@@ -13,6 +14,25 @@ let numberOfPoints = 0;
 let pointAdded = false;
 let firstExecution = false;
 
+audioButton.addEventListener("click", function () {
+    console.log("audioButton.src: ", audioButton.src);
+    if(audioButton.src.includes("sound-on.png")){
+        audioButton.src = "../images/sound-off.png";
+
+        audioMario.muted = true;
+        audioSong.muted = true;
+        audioDied.muted = true;
+        audioJump.muted = true;
+    }
+    else{
+        audioButton.src = "../images/sound-on.png";
+
+        audioMario.muted = false;
+        audioSong.muted = false;
+        audioDied.muted = false;
+        audioJump.muted = false;
+    }
+});
 
 const jump = () => {
     audioJump.play();
