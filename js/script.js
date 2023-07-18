@@ -2,6 +2,7 @@ const mario = document.querySelector(".mario");
 const pipe = document.querySelector(".pipe");
 const clouds = document.querySelector(".clouds");
 const points = document.querySelector(".points");
+const audioMario = document.querySelector(".audioMario");
 const audioSong = document.querySelector(".audioSong");
 const audioDied = document.querySelector(".audioDied");
 const audioJump = document.querySelector(".audioJump");
@@ -10,6 +11,9 @@ audioSong.volume = 0.7;
 const restart = document.querySelector(".restartButtonDiv");
 let numberOfPoints = 0;
 let pointAdded = false;
+
+audioMario.play();
+audioSong.play();
 
 const jump = () => {
     audioJump.play();
