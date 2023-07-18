@@ -7,6 +7,8 @@ const audioSong = document.querySelector(".audioSong");
 const audioDied = document.querySelector(".audioDied");
 const audioJump = document.querySelector(".audioJump");
 audioJump.volume = 0.3;
+audioMario.autoPlay = true;
+audioSong.autoPlay = true;
 audioSong.volume = 0.7;
 const restart = document.querySelector(".restartButtonDiv");
 let numberOfPoints = 0;
@@ -73,6 +75,4 @@ const loop = setInterval(() => {
 
 }, 10);
 
-audioMario.play();
-audioSong.play();
 document.addEventListener("keydown", jump);
