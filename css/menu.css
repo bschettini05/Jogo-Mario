@@ -58,6 +58,7 @@
 }
 
 .playButtonText {
+    text-decoration: none;
     font-family: "SuperMarioBrosFont", 'Times New Roman', Times, serif;
     color: white;
     font-size: 5rem;
