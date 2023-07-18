@@ -12,9 +12,6 @@ const restart = document.querySelector(".restartButtonDiv");
 let numberOfPoints = 0;
 let pointAdded = false;
 
-audioMario.play();
-audioSong.play();
-
 const jump = () => {
     audioJump.play();
     mario.classList.add("jump");
@@ -76,4 +73,6 @@ const loop = setInterval(() => {
 
 }, 10);
 
+audioMario.play();
+audioSong.play();
 document.addEventListener("keydown", jump);
