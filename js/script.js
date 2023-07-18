@@ -2,11 +2,17 @@ const mario = document.querySelector(".mario");
 const pipe = document.querySelector(".pipe");
 const clouds = document.querySelector(".clouds");
 const points = document.querySelector(".points");
+const audioSong = document.querySelector(".audioSong");
+const audioDied = document.querySelector(".audioDied");
+const audioJump = document.querySelector(".audioJump");
+audioJump.volume = 0.3;
+audioSong.volume = 0.7;
 const restart = document.querySelector(".restartButtonDiv");
 let numberOfPoints = 0;
 let pointAdded = false;
 
 const jump = () => {
+    audioJump.play();
     mario.classList.add("jump");
 
     setTimeout(() => {
@@ -40,10 +46,16 @@ const loop = setInterval(() => {
         clouds.style.animation = "none";
         clouds.style.left = `${cloudsPositionLeft}px`;
 
+        audioSong.pause();
+
+        audioDied.play();
+
         restart.style.display = "flex";
         restart.addEventListener("click", () => {
             window.location.reload();
         })
+
+        document.removeEventListener("keydown", jump);
 
         clearInterval(loop);
     }
