@@ -17,7 +17,7 @@ let firstExecution = false;
 audioButton.addEventListener("click", function () {
     console.log("audioButton.src: ", audioButton.src);
     if(audioButton.src.includes("sound-on.png")){
-        audioButton.src = "../images/sound-off.png";
+        audioButton.src = "./images/sound-off.png";
 
         audioMario.muted = true;
         audioSong.muted = true;
@@ -25,7 +25,7 @@ audioButton.addEventListener("click", function () {
         audioJump.muted = true;
     }
     else{
-        audioButton.src = "../images/sound-on.png";
+        audioButton.src = "./images/sound-on.png";
 
         audioMario.muted = false;
         audioSong.muted = false;
@@ -50,9 +50,6 @@ const loop = setInterval(() => {
     // + tries to convert string to number
     points.textContent = `Pontos: ${numberOfPoints}`;
 
-    console.log("pipePositionLeft: ", pipePositionLeft);
-    console.log("cloudsPositionLeft: ", cloudsPositionLeft);
-    console.log("marioPositionBottom: ", marioPositionBottom);
 
     if(firstExecution === false){
         audioMario.play();
